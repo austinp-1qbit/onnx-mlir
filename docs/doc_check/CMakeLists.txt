@@ -1,4 +1,4 @@
-find_package(PythonInterp 3 REQUIRED)
+#find_package(PythonInterp 3 REQUIRED)
 
 add_custom_target(check-doc
         COMMAND ${PYTHON_EXECUTABLE}
@@ -8,4 +8,3 @@ add_custom_target(check-doc
                             third_party
                             docs/doc_check/test
                             docs/_site)
-

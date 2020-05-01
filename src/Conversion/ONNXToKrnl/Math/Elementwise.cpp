@@ -13,6 +13,12 @@
 using namespace mlir;
 
 template <>
+struct ScalarOp<ONNXNegOp> {
+  using FOp = NegFOp;
+  using IOp = NegIOp;
+};
+
+template <>
 struct ScalarOp<ONNXAddOp> {
   using FOp = AddFOp;
   using IOp = AddIOp;
@@ -625,6 +631,7 @@ void populateLoweringONNXElementwiseOpPattern(
   patterns.insert<ONNXElementwiseUnaryOpLowering<mlir::ONNXAbsOp>,
       ONNXElementwiseVariadicOpLowering<mlir::ONNXAddOp>,
       ONNXElementwiseVariadicOpLowering<mlir::ONNXAndOp>,
+      ONNXElementwiseUnaryOpLowering<mlir::ONNXNegOp>,
       ONNXElementwiseUnaryOpLowering<mlir::ONNXCosOp>,
       ONNXElementwiseUnaryOpLowering<mlir::ONNXCoshOp>,
       ONNXElementwiseVariadicOpLowering<mlir::ONNXDivOp>,

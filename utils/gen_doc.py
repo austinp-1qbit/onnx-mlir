@@ -59,7 +59,7 @@ OpsWithShapeInference = [
     'LeakyRelu', 'Elu', 'Selu', 'HardSigmoid', 'Reshape', 'Reciprocal',
     'Identity', 'Cos', 'Log', 'Transpose', 'Softmax', 'ReduceMax', 'ReduceMin',
     'ReduceProd', 'ReduceSum', 'Softplus', 'Softsign', 'Sqrt', 'Unsqueeze',
-    'Sign', 'Constant', 'AveragePool', 'Abs', 'Conv', 'Concat'
+    'Sign', 'Constant', 'AveragePool', 'Abs', 'Conv', 'Concat', 'Neg'
 ]
 
 # Operations supporting canonicalization.
@@ -571,4 +571,3 @@ if __name__ == '__main__':
         sys.stdout.write(Args.op_def.getvalue())
     if args.dry_run_op_build_table:
         sys.stdout.write(Args.op_importer.getvalue())
-

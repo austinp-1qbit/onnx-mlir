@@ -418,6 +418,15 @@ bool ONNXEluOp::inferShapes() {
 }
 
 //===----------------------------------------------------------------------===//
+// Neg
+/// Infer the output shape of the ONNXNegOp. This method is required by the
+/// shape inference interface.
+bool ONNXNegOp::inferShapes() {
+  getResult().setType(getOperand().getType());
+  return true;
+}
+
+//===----------------------------------------------------------------------===//
 // Relu
 /// Infer the output shape of the ONNXReluOp. This method is required by the
 /// shape inference interface.
